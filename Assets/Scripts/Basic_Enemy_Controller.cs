@@ -37,10 +37,7 @@ public class Basic_Enemy_Controller : MonoBehaviour
 
 
 
-        if (cooling <= 0)
-        {
-            cooling = cooldown;
-        }
+       
 
         if (Target != null)
         {
@@ -75,9 +72,12 @@ public class Basic_Enemy_Controller : MonoBehaviour
 
         if ( cooling <= 0 && Vector2.Distance(Target.transform.position, transform.position) <= attackRange )
         {
-            Instantiate(Ammunition);
+            Instantiate(Ammunition,transform.position, transform.rotation);
         }
-        
+         if (cooling <= 0)
+        {
+            cooling = cooldown;
+        }
         
     }
 
