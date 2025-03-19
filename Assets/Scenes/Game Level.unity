@@ -499,6 +499,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2814fd4c03543bd469fd1ea506880bf9, type: 3}
+--- !u!4 &734468628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3812769713026753910, guid: 7d561384d756c01488928e9222e221a0, type: 3}
+  m_PrefabInstance: {fileID: 6417636817222440288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894756532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -556,11 +561,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de7b9c7ec9197f4eb8641443091c8be, type: 3}
---- !u!1 &1352375397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2358904885350650433, guid: 7d561384d756c01488928e9222e221a0, type: 3}
-  m_PrefabInstance: {fileID: 6417636817222440288}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1417990811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,12 +749,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076b1d68b9e328f448db6d83e4a34ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  Target: {fileID: 1352375397}
+  speedOr: 2
+  Target: {fileID: 734468628}
   Ammunition: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
   Health: 4
-  attackRange: 0.1
+  attackRange: 2
   cooldown: 3
+  targetPosition: {x: 0, y: 0}
 --- !u!1001 &1588362567
 PrefabInstance:
   m_ObjectHideFlags: 0
