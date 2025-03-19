@@ -236,6 +236,66 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de7b9c7ec9197f4eb8641443091c8be, type: 3}
+--- !u!1001 &79858129
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6139349
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1066236
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.036604382
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341233673322580844, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235130692624342443, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_Name
+      value: 'jager '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3235130692624342443, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1525559359}
+  m_SourcePrefab: {fileID: 100100000, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
 --- !u!1 &365566455
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +556,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de7b9c7ec9197f4eb8641443091c8be, type: 3}
+--- !u!1 &1352375397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2358904885350650433, guid: 7d561384d756c01488928e9222e221a0, type: 3}
+  m_PrefabInstance: {fileID: 6417636817222440288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1417990811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -667,6 +732,29 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de7b9c7ec9197f4eb8641443091c8be, type: 3}
+--- !u!1 &1525559358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3235130692624342443, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+  m_PrefabInstance: {fileID: 79858129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1525559359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525559358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076b1d68b9e328f448db6d83e4a34ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  Target: {fileID: 1352375397}
+  Ammunition: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
+  Health: 4
+  attackRange: 0.1
+  cooldown: 3
 --- !u!1001 &1588362567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1113,3 +1201,4 @@ SceneRoots:
   - {fileID: 1588362567}
   - {fileID: 633211677}
   - {fileID: 643711928}
+  - {fileID: 79858129}
