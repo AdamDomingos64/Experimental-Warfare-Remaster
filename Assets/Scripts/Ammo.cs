@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-
-    public GameObject Target;
+    private Rigidbody2D rb;
+   
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        transform.position += transform.forward * Time.deltaTime * speed;
+        rb.velocity = transform.up * speed;
 
     }
 }
