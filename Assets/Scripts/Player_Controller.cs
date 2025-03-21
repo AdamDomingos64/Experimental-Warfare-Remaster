@@ -9,6 +9,7 @@ public class Player_Controller : MonoBehaviour
     public Rigidbody2D Rb2d;
     private Vector2  moveInput;
     private SpriteRenderer spriteRenderer;
+    public GameObject Ammunition;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +49,9 @@ public class Player_Controller : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 180);
         }
 
+        if (Input.GetKeyDown("space"))
+        {
+            Instantiate(Ammunition, transform.position, transform.rotation);
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Basic_Enemy_Controller : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class Basic_Enemy_Controller : MonoBehaviour
     public float speedOr;
     public Transform Target;
     public GameObject Ammunition;
-    public int Health;
+    public int maxHealth;
     public float attackRange;
     public float cooldown;
     private float cooling;
     private float speed;
+    public int Health;
     public Vector2 targetPosition;
+    public GameObject Weakness;
 
 
     // Start is called before the first frame update
@@ -23,6 +26,7 @@ public class Basic_Enemy_Controller : MonoBehaviour
     {
         cooling = cooldown;
         speed = speedOr;
+        Health = maxHealth;
     }
 
     // Update is called once per frame
@@ -56,12 +60,12 @@ public class Basic_Enemy_Controller : MonoBehaviour
 
         if (Vector2.Distance(transform.position, Target.transform.position) <= attackRange)
         {
-            Debug.Log("stop");
+           // Debug.Log("stop");
              speed = 0;
         }
         else if(Vector2.Distance(transform.position, Target.transform.position) > attackRange)
         {
-            Debug.Log("find");
+           // Debug.Log("find");
             speed = speedOr;
         }
 
@@ -81,11 +85,12 @@ public class Basic_Enemy_Controller : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!other.CompareTag("Player_Bullet"))
+        if (collision.gameObject == Weakness.gameObject)
         {
             Health -= 1;
+            Debug.Log("hit");
         }
     }
 }
