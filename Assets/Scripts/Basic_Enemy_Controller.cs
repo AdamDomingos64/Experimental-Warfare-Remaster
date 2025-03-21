@@ -71,7 +71,7 @@ public class Basic_Enemy_Controller : MonoBehaviour
 
         if (Health <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         if ( cooling <= 0 && Vector2.Distance(Target.transform.position, transform.position) <= attackRange )
@@ -85,12 +85,14 @@ public class Basic_Enemy_Controller : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject == Weakness.gameObject)
-        {
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        Debug.Log("hit");
+        if (collision.gameObject.tag == "Bullet")
+        {  
             Health -= 1;
-            Debug.Log("hit");
+         
         }
     }
+
 }
