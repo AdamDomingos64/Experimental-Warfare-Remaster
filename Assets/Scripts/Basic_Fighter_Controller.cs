@@ -87,7 +87,6 @@ public class Basic_Fighter_Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
-        Debug.Log("hit");
         if (collision.gameObject.tag == "Bullet")
         {  
             Health -= 1;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5375275973981221008}
   - component: {fileID: 9106337671134356047}
   - component: {fileID: 4041104990535930867}
+  - component: {fileID: 7187644293421216358}
   m_Layer: 0
   m_Name: BV-141
   m_TagString: Untagged
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &7187644293421216358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456555685247648444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ff24dcb69ac7249adc93b2022c83e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOr: 2
+  Target: {fileID: 0}
+  Ammunition: {fileID: 2695804329911005741, guid: 693b8a9ed02fda945947e003aa50e059, type: 3}
+  maxHealth: 3
+  attackRange: 2
+  cooldown: 3
+  Health: 0
+  targetPosition: {x: 0, y: 0}
+  Weakness: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}

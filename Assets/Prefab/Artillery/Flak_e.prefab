@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  isEnemy: 1
 --- !u!1 &6931201550091999665
 GameObject:
   m_ObjectHideFlags: 0
