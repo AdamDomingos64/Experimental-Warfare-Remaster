@@ -71,15 +71,19 @@ public class Enemy_Manager : MonoBehaviour
             enemyBomberM = newBomberMobj.GetComponent<Basic_Medium_Bomber_Controller>();
             
 
-            foreach (var Artillery in allyArtillery)
-            {
-                if (Artillery != null)
-                {
-                    enemyBomberM.Target = Artillery.transform;
-                    break;
-                }
-            } 
+          
             
+            if (enemyBomberM.Target == null)
+            {
+                foreach (var Artillery in allyArtillery)
+                {
+                    if (Artillery != null)
+                    {
+                        enemyBomberM.Target = Artillery.transform;
+                        break;
+                    }
+                }
+            }
         }
         else
         {
@@ -87,12 +91,16 @@ public class Enemy_Manager : MonoBehaviour
             allyBomberM = newBomberMobj.GetComponent<Basic_Medium_Bomber_Controller>();
             
 
-            foreach (var Artillery in enemyArtillery)
+          
+            if(allyBomberM.Target == null)
             {
-                if (Artillery != null)
+                foreach (var Artillery in enemyArtillery)
                 {
-                    allyBomberM.Target = Artillery.transform;
-                    break;
+                    if (Artillery != null)
+                    {
+                        allyBomberM.Target = Artillery.transform;
+                        break;
+                    }
                 }
             }
         }

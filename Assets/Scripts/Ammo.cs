@@ -19,6 +19,7 @@ public class Ammo : MonoBehaviour
     void Update()
     {
         
+        
         rb.velocity = transform.up * speed;
 
     }

@@ -9,10 +9,14 @@ public class Artillery_Controller : MonoBehaviour
 
     public Transform Target;
     public bool isEnemy = false;
-    
+    public int maxHealth;
+    private int Health;
 
     // Start is called before the first frame update
-   
+    private void Start()
+    {
+        Health = maxHealth;
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,28 +25,26 @@ public class Artillery_Controller : MonoBehaviour
         if (Target != null)
         {
 
-
-
-
-
-            transform.right = Target.position - transform.position;
-
-            //transform.LookAt(Target.position, Vector3.up);
+            transform.right = Target.position - transform.position;          
 
         }
-      
-
-        // Vector3 Look = transform.InverseTransformPoint(Target.transform.position);
-        // float Angle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
-
-        // transform.Rotate(0,0,Angle);
 
 
-        // var dir = Target.transform.position - transform.position;
-        // var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        // transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (Health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "BombS")
+        {
+            Health -= 1;
+
+        }
+    }
 
 }
