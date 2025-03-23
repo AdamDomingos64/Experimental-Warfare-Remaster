@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 167321551004707674}
   - component: {fileID: 3812663069233098184}
+  - component: {fileID: 2599917619090903787}
   m_Layer: 0
   m_Name: Flak_top_A
   m_TagString: Untagged
@@ -163,6 +164,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2599917619090903787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828908149371744433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650d8a1021f8ab64c84f571b8afecd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!1 &6931201550091999665
 GameObject:
   m_ObjectHideFlags: 0
