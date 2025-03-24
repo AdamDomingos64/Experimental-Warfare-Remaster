@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4546807500699336647}
   - component: {fileID: 5254738565356777752}
   - component: {fileID: 2850452199719557821}
+  - component: {fileID: 3487672391727621204}
   m_Layer: 0
   m_Name: Triebflugel
   m_TagString: Untagged
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35, y: 0.65}
   m_EdgeRadius: 0
+--- !u!114 &3487672391727621204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101594549888376298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda4d85ba5b8fd744956a8cbe1f79ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOr: 3
+  Target: {fileID: 0}
+  Ammunition: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
+  maxHealth: 3
+  attackRange: 2
+  cooldown: 3
+  Health: 0
+  targetPosition: {x: 0, y: 0}
+  Weakness: {fileID: 7345158628801080902, guid: f4aeb34ce26bd784cac7d3e0e8f4f40e, type: 3}

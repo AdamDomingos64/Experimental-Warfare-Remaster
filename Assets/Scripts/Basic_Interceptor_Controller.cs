@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Basic_Fighter_Controller : MonoBehaviour
+public class Basic_Interceptor_Controller : MonoBehaviour
 {
 
     public float speedOr;
@@ -57,16 +57,24 @@ public class Basic_Fighter_Controller : MonoBehaviour
             newRotation.z = zAngle;
             transform.rotation = Quaternion.Euler(newRotation);
         }
-
-        if (Vector2.Distance(transform.position, Target.transform.position) <= attackRange)
+        if (Target != null)
         {
-           // Debug.Log("stop");
-             speed = 0;
+            if (Vector2.Distance(transform.position, Target.transform.position) <= attackRange)
+            {
+                // Debug.Log("stop");
+                speed = 0;
+            }
+            else if (Vector2.Distance(transform.position, Target.transform.position) > attackRange)
+            {
+                // Debug.Log("find");
+                speed = speedOr;
+            }
+            Debug.Log("target is not null");
         }
-        else if(Vector2.Distance(transform.position, Target.transform.position) > attackRange)
+        else if (Target == null)
         {
-           // Debug.Log("find");
-            speed = speedOr;
+            speed = 0;
+            Debug.Log("target is null");
         }
 
         if (Health <= 0)
@@ -74,20 +82,28 @@ public class Basic_Fighter_Controller : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if ( cooling <= 0 && Vector2.Distance(Target.transform.position, transform.position) <= attackRange )
+        if (Target != null)
         {
-            Instantiate(Ammunition,transform.position, transform.rotation);
+            if (cooling <= 0 && Vector2.Distance(Target.transform.position, transform.position) <= attackRange)
+            {
+                Instantiate(Ammunition, transform.position, transform.rotation);
+            }
+            if (cooling <= 0)
+            {
+                cooling = cooldown;
+            }
         }
-         if (cooling <= 0)
+        else if (Target == null)
         {
-            cooling = cooldown;
+            cooling = 1;
         }
         
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
-        if (collision.gameObject.tag == "BulletP")
+        Debug.Log("hit");
+        if (collision.gameObject.tag == "Bulletp")
         {  
             Health -= 1;
          

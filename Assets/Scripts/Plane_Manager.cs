@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Enemy_Manager : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class Enemy_Manager : MonoBehaviour
     public Basic_Medium_Bomber_Controller enemyBomberM;
     public Basic_Medium_Bomber_Controller allyBomberM;
 
+    public Basic_Interceptor_Controller enemyInterceptor;
+    public Basic_Interceptor_Controller allyInterceptor;
+
     public Basic_Fighter_Controller enemyFighter;
 
 
     public GameObject allyMediumBomberPrefab;
     public GameObject enemyMediumBomberPrefab;
+
     public GameObject enemyFighterPrefab;
+
+    public GameObject allyInterceptorPrefab;
+    public GameObject enemyInterceptorPrefab;
+
 
 
     public Transform enemySpawnT;
@@ -30,6 +39,8 @@ public class Enemy_Manager : MonoBehaviour
         spawnMediumBomber(true);
         spawnMediumBomber(false);
         spawnFighter();
+        spawnInterceptor(true);
+        spawnInterceptor(false);
     }
 
     // Update is called once per frame
@@ -46,6 +57,14 @@ public class Enemy_Manager : MonoBehaviour
         if(enemyFighter == null)
         {
             spawnFighter();
+        }
+        if (enemyInterceptor == null)
+        {
+            spawnInterceptor(true);
+        }
+        if (allyInterceptor == null)
+        {
+            spawnInterceptor(false);
         }
 
 
@@ -95,7 +114,30 @@ public class Enemy_Manager : MonoBehaviour
             enemyArtillery.Clear();
 
         }
-      
+
+
+
+
+
+        if (allyBomberM.transform != null)
+        {
+            enemyInterceptor.Target = allyBomberM.transform;
+        }
+        else
+        {
+            enemyInterceptor.Target = null;
+
+        }
+
+
+        if (enemyBomberM.transform != null)
+        {
+            allyInterceptor.Target = enemyBomberM.transform;
+        }
+        else
+        {
+            allyInterceptor.Target = null;
+        }
 
 
 
@@ -109,7 +151,24 @@ public class Enemy_Manager : MonoBehaviour
         enemyFighter.Target = PlayerT;
     }
 
+    private void spawnInterceptor(bool isEnemy)
+    {
+        if (isEnemy == true)
+        {
+            var newInterceptorobj = GameObject.Instantiate(enemyInterceptorPrefab, enemySpawnT.position, Quaternion.identity, null);
+            enemyInterceptor = newInterceptorobj.GetComponent<Basic_Interceptor_Controller>();
+          
 
+        }
+        else
+        {
+            var newInterceptorobj = GameObject.Instantiate(allyInterceptorPrefab, allySpawnT.position, Quaternion.identity, null);
+            allyInterceptor = newInterceptorobj.GetComponent<Basic_Interceptor_Controller>();
+
+            
+
+        }
+    }
 
     private void spawnMediumBomber(bool isEnemy)
     {
@@ -120,25 +179,14 @@ public class Enemy_Manager : MonoBehaviour
         {
             var newBomberMobj = GameObject.Instantiate(enemyMediumBomberPrefab, enemySpawnT.position, Quaternion.identity, null );
             enemyBomberM = newBomberMobj.GetComponent<Basic_Medium_Bomber_Controller>();
-            
-
-          
-            
-            
-                
-
-           
+        
             
         }
         else
         {
             var newBomberMobj = GameObject.Instantiate(allyMediumBomberPrefab, allySpawnT.position, Quaternion.identity, null);
             allyBomberM = newBomberMobj.GetComponent<Basic_Medium_Bomber_Controller>();
-            
-
-          
-           
-         
+      
             
         }
 

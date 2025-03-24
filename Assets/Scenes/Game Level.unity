@@ -430,10 +430,14 @@ MonoBehaviour:
   - {fileID: 308275884}
   enemyBomberM: {fileID: 0}
   allyBomberM: {fileID: 0}
+  enemyInterceptor: {fileID: 0}
+  allyInterceptor: {fileID: 0}
   enemyFighter: {fileID: 0}
   allyMediumBomberPrefab: {fileID: 36968468549585526, guid: bf1de12a97d2cd74c8f9fb5257056e2a, type: 3}
   enemyMediumBomberPrefab: {fileID: 8456555685247648444, guid: 63876870aed370f45805322cd55c1131, type: 3}
   enemyFighterPrefab: {fileID: 8777694368779900630, guid: 08873dd2a02b91a4c9f555b37322afc9, type: 3}
+  allyInterceptorPrefab: {fileID: 3280113797426451271, guid: 6e3a56cc513dbcc41b573dd261bf234f, type: 3}
+  enemyInterceptorPrefab: {fileID: 6101594549888376298, guid: bdf98f3bff306854fa93e7e7b69270f7, type: 3}
   enemySpawnT: {fileID: 1323923182}
   allySpawnT: {fileID: 156835949}
   PlayerT: {fileID: 734468628}
