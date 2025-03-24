@@ -48,6 +48,57 @@ public class Enemy_Manager : MonoBehaviour
             spawnFighter();
         }
 
+
+
+
+        foreach (var Artillery in allyArtillery)
+        {
+            if (Artillery != null)
+            {
+                enemyBomberM.Target = Artillery.transform;
+                break;
+            }
+            else if (allyArtillery.Count == 0)
+            {
+
+                enemyBomberM.Target = null;
+                break;
+
+            }
+        }
+        foreach (var Artillery in enemyArtillery)
+        {
+            if (Artillery != null)
+            {
+                allyBomberM.Target = Artillery.transform;
+                break;
+            }
+            else if ( enemyArtillery.Count == 0)
+            {
+
+                allyBomberM.Target = null;
+                break;
+
+            }
+
+        }
+        if (enemyBomberM.Target == null)
+        {
+
+            allyArtillery.Remove(allyArtillery[0]);
+
+        }
+      
+        if (allyBomberM.Target == null)
+        {
+
+            enemyArtillery.Remove(enemyArtillery[0]);
+
+        }
+      
+
+
+
     }
 
 
@@ -74,21 +125,9 @@ public class Enemy_Manager : MonoBehaviour
           
             
             
-                foreach (var Artillery in allyArtillery)
-                {
-                    if (Artillery != null)
-                    {
-                        enemyBomberM.Target = Artillery.transform;
-                        break;
-                    }
-                }
+                
 
-                if (enemyBomberM.Target == null)
-            {
-
-                allyArtillery.Remove(allyArtillery[0]);
-
-            }
+           
             
         }
         else
@@ -99,21 +138,8 @@ public class Enemy_Manager : MonoBehaviour
 
           
            
-                foreach (var Artillery in enemyArtillery)
-                {
-                    if (Artillery != null)
-                    {
-                        allyBomberM.Target = Artillery.transform;
-                        break;
-                    }
-
-                }
-            if (allyBomberM.Target == null)
-            {
-
-                enemyArtillery.Remove(enemyArtillery[0]);
-
-            }
+         
+            
         }
 
 
