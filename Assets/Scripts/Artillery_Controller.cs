@@ -43,8 +43,9 @@ public class Artillery_Controller : MonoBehaviour
         if (collision.gameObject.tag == "BombS")
         {
             Health -= 1;
-
+            Destroy(collision.gameObject);
         }
+
     }
 
 }

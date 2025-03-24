@@ -90,7 +90,7 @@ public class Basic_Fighter_Controller : MonoBehaviour
         if (collision.gameObject.tag == "BulletP")
         {  
             Health -= 1;
-         
+            Destroy(collision.gameObject);
         }
     }
 

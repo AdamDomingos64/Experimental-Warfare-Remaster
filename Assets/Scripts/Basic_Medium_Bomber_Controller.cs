@@ -106,7 +106,7 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {  
             Health -= 1;
-         
+            Destroy(collision.gameObject);
         }
     }
 
