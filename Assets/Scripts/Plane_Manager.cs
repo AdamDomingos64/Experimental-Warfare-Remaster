@@ -85,14 +85,14 @@ public class Enemy_Manager : MonoBehaviour
         if (enemyBomberM.Target == null && allyArtillery.Count > 0)
         {
 
-            allyArtillery.Remove(allyArtillery[0]);
+            allyArtillery.Clear ();
 
         }
       
         if (allyBomberM.Target == null && enemyArtillery.Count > 0)
         {
 
-            enemyArtillery.Remove(enemyArtillery[0]);
+            enemyArtillery.Clear();
 
         }
       
