@@ -73,8 +73,7 @@ public class Enemy_Manager : MonoBehaviour
 
           
             
-            if (enemyBomberM.Target == null)
-            {
+            
                 foreach (var Artillery in allyArtillery)
                 {
                     if (Artillery != null)
@@ -83,7 +82,14 @@ public class Enemy_Manager : MonoBehaviour
                         break;
                     }
                 }
+
+                if (enemyBomberM.Target == null)
+            {
+
+                allyArtillery.Remove(allyArtillery[0]);
+
             }
+            
         }
         else
         {
@@ -92,8 +98,7 @@ public class Enemy_Manager : MonoBehaviour
             
 
           
-            if(allyBomberM.Target == null)
-            {
+           
                 foreach (var Artillery in enemyArtillery)
                 {
                     if (Artillery != null)
@@ -101,7 +106,13 @@ public class Enemy_Manager : MonoBehaviour
                         allyBomberM.Target = Artillery.transform;
                         break;
                     }
+
                 }
+            if (allyBomberM.Target == null)
+            {
+
+                enemyArtillery.Remove(enemyArtillery[0]);
+
             }
         }
 
