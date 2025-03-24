@@ -156,17 +156,19 @@ public class Enemy_Manager : MonoBehaviour
             allyInterceptor.Target = null;
         }
 
-        if (allyBase.transform.gameObject != null)
+
+
+        if (allyBase.transform != null)
         {
-            enemyBomberH.targetPosition = allyBase.transform.position;
+            enemyBomberH.Target = allyBase.transform;
         }
         else
         {
             enemyBomberH.Target = null;
         }
-        if (enemyBase.transform.gameObject != null)
+        if (enemyBase.transform != null)
         {
-            allyBomberH.targetPosition = enemyBase.transform.position;
+            allyBomberH.Target = enemyBase.transform;
         }
         else
         {
@@ -228,15 +230,15 @@ public class Enemy_Manager : MonoBehaviour
 
     private void spawnHeavyBomber(bool isEnemy)
     {
-        if (allyArtillery.Count == 0)
+        if (isEnemy == true)
         {
             var newBomberHobj = GameObject.Instantiate(enemyHeavyBomberPrefab, enemySpawnT.position, Quaternion.identity, null);
             enemyBomberH = newBomberHobj.GetComponent<Basic_Heavy_Bomber_Controller>();
         }
 
-        if (enemyArtillery.Count == 0)
+        else
         {
-            var newBomberHobj = GameObject.Instantiate(allyHeavyBomberPrefab, enemySpawnT.position, Quaternion.identity, null);
+            var newBomberHobj = GameObject.Instantiate(allyHeavyBomberPrefab, allySpawnT.position, Quaternion.identity, null);
             allyBomberH = newBomberHobj.GetComponent<Basic_Heavy_Bomber_Controller>();
         }
     }
