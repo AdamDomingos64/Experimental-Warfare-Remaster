@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2347583809730010405}
   - component: {fileID: 3667288211830062426}
   - component: {fileID: 2319733951086533299}
+  - component: {fileID: 6527887997315252706}
   m_Layer: 0
   m_Name: Project_C
   m_TagString: Untagged
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.65}
   m_EdgeRadius: 0
+--- !u!114 &6527887997315252706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940924886114924242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15e9bef5d6726a4d949760236e122f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOr: 2
+  Target: {fileID: 0}
+  Ammunition: {fileID: 1947064651710453616, guid: b67f1be9aad05ba4192b54ac01903ba0, type: 3}
+  maxHealth: 3
+  attackRange: 2
+  cooldown: 3
+  Health: 0
+  targetPosition: {x: 0, y: 0}
+  Weakness: {fileID: 0}

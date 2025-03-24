@@ -317,6 +317,11 @@ Transform:
   - {fileID: 1784039179}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &424320167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 553571921296769523, guid: 706cfca0323f5054e99fb5ef45e81b61, type: 3}
+  m_PrefabInstance: {fileID: 8445182356416146550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &439944160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,14 +435,20 @@ MonoBehaviour:
   - {fileID: 308275884}
   enemyBomberM: {fileID: 0}
   allyBomberM: {fileID: 0}
+  enemyBomberH: {fileID: 0}
+  allyBomberH: {fileID: 0}
   enemyInterceptor: {fileID: 0}
   allyInterceptor: {fileID: 0}
   enemyFighter: {fileID: 0}
   allyMediumBomberPrefab: {fileID: 36968468549585526, guid: bf1de12a97d2cd74c8f9fb5257056e2a, type: 3}
   enemyMediumBomberPrefab: {fileID: 8456555685247648444, guid: 63876870aed370f45805322cd55c1131, type: 3}
+  allyHeavyBomberPrefab: {fileID: 7190823392475287368, guid: 463b485af30a6b94c8fc962f5a519db8, type: 3}
+  enemyHeavyBomberPrefab: {fileID: 5940924886114924242, guid: 791b6f40dcaefc048b254f321c5b25fa, type: 3}
   enemyFighterPrefab: {fileID: 8777694368779900630, guid: 08873dd2a02b91a4c9f555b37322afc9, type: 3}
   allyInterceptorPrefab: {fileID: 3280113797426451271, guid: 6e3a56cc513dbcc41b573dd261bf234f, type: 3}
   enemyInterceptorPrefab: {fileID: 6101594549888376298, guid: bdf98f3bff306854fa93e7e7b69270f7, type: 3}
+  enemyBaseG: {fileID: 2098680153}
+  allyBaseG: {fileID: 424320167}
   enemySpawnT: {fileID: 1323923182}
   allySpawnT: {fileID: 156835949}
   PlayerT: {fileID: 734468628}
@@ -1144,6 +1155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650d8a1021f8ab64c84f571b8afecd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2098680153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2656221126172704503, guid: 463afb7c4a24daa4e86f90bcc143cc6c, type: 3}
+  m_PrefabInstance: {fileID: 4905503851389086022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4905503851389086022
 PrefabInstance:
   m_ObjectHideFlags: 0

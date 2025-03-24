@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3978981629992156999}
   - component: {fileID: 5439446414997256409}
   - component: {fileID: 8291328527391785728}
+  - component: {fileID: 3988100954268295004}
   m_Layer: 0
   m_Name: YB-35
   m_TagString: Untagged
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &3988100954268295004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190823392475287368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15e9bef5d6726a4d949760236e122f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOr: 2
+  Target: {fileID: 0}
+  Ammunition: {fileID: 1947064651710453616, guid: b67f1be9aad05ba4192b54ac01903ba0, type: 3}
+  maxHealth: 3
+  attackRange: 2
+  cooldown: 3
+  Health: 0
+  targetPosition: {x: 0, y: 0}
+  Weakness: {fileID: 0}

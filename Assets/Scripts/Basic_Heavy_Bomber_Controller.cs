@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Basic_Interceptor_Controller : MonoBehaviour
+public class Basic_Heavy_Bomber_Controller : MonoBehaviour
 {
 
     public float speedOr;
