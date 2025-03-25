@@ -19,14 +19,21 @@ public class Basic_Fighter_Controller : MonoBehaviour
     public int Health;
     public Vector2 targetPosition;
     public GameObject Weakness;
+   [SerializeField] HealthBar healthbar;
 
 
+
+    private void Awake()
+    {
+        healthbar = GetComponentInChildren<HealthBar>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         cooling = cooldown;
         speed = speedOr;
         Health = maxHealth;
+        healthbar.UpdateHealthBar(Health, maxHealth);
     }
 
     // Update is called once per frame
@@ -91,6 +98,7 @@ public class Basic_Fighter_Controller : MonoBehaviour
         {  
             Health -= 1;
             Destroy(collision.gameObject);
+            healthbar.UpdateHealthBar(Health, maxHealth);
         }
     }
 
