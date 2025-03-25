@@ -1282,6 +1282,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5286543219616131234, guid: 7d561384d756c01488928e9222e221a0, type: 3}
+      propertyPath: lookSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286543219616131234, guid: 7d561384d756c01488928e9222e221a0, type: 3}
+      propertyPath: spinSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286543219616131234, guid: 7d561384d756c01488928e9222e221a0, type: 3}
       propertyPath: Ammunition
       value: 
       objectReference: {fileID: 7345158628801080902, guid: f4aeb34ce26bd784cac7d3e0e8f4f40e, type: 3}

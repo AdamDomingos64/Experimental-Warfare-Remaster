@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7256435825883477365}
   - component: {fileID: 4521450949079396341}
   - component: {fileID: 4143165229383843171}
+  - component: {fileID: 6794358679572347382}
   m_Layer: 0
   m_Name: Mix_Master
   m_TagString: Untagged
@@ -152,3 +153,25 @@ MonoBehaviour:
   Health: 0
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
+  healthbar: {fileID: 0}
+--- !u!95 &6794358679572347382
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36968468549585526}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1b0bb28e7e6c6d4fafa8f70dddb5ea9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

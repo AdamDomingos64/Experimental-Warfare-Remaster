@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9106337671134356047}
   - component: {fileID: 4041104990535930867}
   - component: {fileID: 7187644293421216358}
+  - component: {fileID: 7921307687510034650}
   m_Layer: 0
   m_Name: BV-141
   m_TagString: Untagged
@@ -153,3 +154,24 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}
   healthbar: {fileID: 0}
+--- !u!95 &7921307687510034650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456555685247648444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a2fa436d8680d34abed58910da6556c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
