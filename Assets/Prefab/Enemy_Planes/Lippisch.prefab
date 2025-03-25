@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1193274738245781001}
   - component: {fileID: 5600338465836146232}
   - component: {fileID: 927313877109267843}
+  - component: {fileID: 4665752113230038893}
   m_Layer: 0
   m_Name: Lippisch
   m_TagString: Untagged
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &4665752113230038893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250412935013545090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d0536a66b94f943a786c7ec3549df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOr: 3
+  Target: {fileID: 0}
+  Ammunition: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
+  maxHealth: 2
+  attackRange: 2
+  cooldown: 3
+  Health: 0
+  targetPosition: {x: 0, y: 0}
+  Weakness: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}

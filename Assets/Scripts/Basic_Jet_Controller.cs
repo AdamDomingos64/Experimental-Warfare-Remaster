@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Basic_Heavy_Bomber_Controller : MonoBehaviour
+public class Basic_Jet_Controller : MonoBehaviour
 {
 
     public float speedOr;
@@ -103,7 +103,7 @@ public class Basic_Heavy_Bomber_Controller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         Debug.Log("hit");
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "BulletP")
         {  
             Health -= 1;
             Destroy(collision.gameObject);

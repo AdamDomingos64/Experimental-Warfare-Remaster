@@ -19,6 +19,9 @@ public class Enemy_Manager : MonoBehaviour
     public Basic_Interceptor_Controller enemyInterceptor;
     public Basic_Interceptor_Controller allyInterceptor;
 
+    public Basic_Jet_Controller enemyJet;
+    public Basic_Jet_Controller allyJet;
+
     public Basic_Fighter_Controller enemyFighter;
 
 
@@ -27,6 +30,9 @@ public class Enemy_Manager : MonoBehaviour
 
     public GameObject allyHeavyBomberPrefab;
     public GameObject enemyHeavyBomberPrefab;
+
+    public GameObject allyJetPrefab;
+    public GameObject enemyJetPrefab;
 
     public GameObject enemyFighterPrefab;
 
@@ -75,6 +81,37 @@ public class Enemy_Manager : MonoBehaviour
         {
             spawnInterceptor(false);
         }
+
+        if (allyBomberH != null && enemyJet == null)
+        {
+            var newJetobj = GameObject.Instantiate(enemyJetPrefab, enemySpawnT.position, Quaternion.identity, null);
+            enemyJet = newJetobj.GetComponent<Basic_Jet_Controller>();
+
+            if (allyBomberH.transform != null)
+            {
+                enemyJet.Target = allyBomberH.transform;
+            }
+            else
+            {
+                enemyJet.Target = null;
+            }
+        }
+
+        if (enemyBomberH != null && allyJet == null)
+        {
+            var newJetobj = GameObject.Instantiate(allyJetPrefab, enemySpawnT.position, Quaternion.identity, null);
+            allyJet = newJetobj.GetComponent<Basic_Jet_Controller>();
+
+            if (enemyBomberH.transform != null)
+            {
+                allyJet.Target = enemyBomberH.transform;
+            }
+            else
+            {
+                allyJet.Target = null;
+            }
+        }
+
         if (enemyBomberH == null && allyArtillery.Count <= 0)
         {
             var newBomberHobj = GameObject.Instantiate(enemyHeavyBomberPrefab, enemySpawnT.position, Quaternion.identity, null);
