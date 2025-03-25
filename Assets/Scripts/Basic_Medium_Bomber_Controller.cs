@@ -19,14 +19,21 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
     public int Health;
     public Vector2 targetPosition;
     public GameObject Weakness;
+    [SerializeField] HealthBar healthbar;
 
 
+
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
         cooling = cooldown;
         speed = speedOr;
         Health = maxHealth;
+        
     }
 
     // Update is called once per frame
@@ -107,6 +114,7 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
         {  
             Health -= 1;
             Destroy(collision.gameObject);
+            
         }
     }
 

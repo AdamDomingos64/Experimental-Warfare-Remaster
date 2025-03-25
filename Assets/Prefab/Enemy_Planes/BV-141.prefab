@@ -152,3 +152,4 @@ MonoBehaviour:
   Health: 0
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}
+  healthbar: {fileID: 0}
