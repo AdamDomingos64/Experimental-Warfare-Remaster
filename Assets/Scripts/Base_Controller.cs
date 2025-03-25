@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEditor.Timeline;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
-public class Artillery_Controller : MonoBehaviour
+public class Base_Controller : MonoBehaviour
 {
 
-    public Transform Target;
+    
     public bool isEnemy = false;
     public int maxHealth;
     private int Health;
@@ -22,17 +23,13 @@ public class Artillery_Controller : MonoBehaviour
     void Update()
     {
 
-        if (Target != null)
-        {
-
-            transform.right = Target.position - transform.position;          
-
-        }
+        
 
 
         if (Health <= 0)
         {
-            Destroy(this.gameObject);
+
+            SceneManager.LoadScene(0);
             
         }
 
@@ -41,7 +38,7 @@ public class Artillery_Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "BombS")
+        if (collision.gameObject.tag == "BombB")
         {
             Health -= 1;
             Destroy(collision.gameObject);

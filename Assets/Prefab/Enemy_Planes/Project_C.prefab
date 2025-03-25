@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3667288211830062426}
   - component: {fileID: 2319733951086533299}
   - component: {fileID: 6527887997315252706}
+  - component: {fileID: 2091064962083907784}
   m_Layer: 0
   m_Name: Project_C
   m_TagString: Untagged
@@ -152,3 +153,24 @@ MonoBehaviour:
   Health: 0
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 0}
+--- !u!95 &2091064962083907784
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940924886114924242}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae161e6674d3e5d4391a855b8ab12d8c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
