@@ -76,11 +76,11 @@ public class Enemy_Manager : MonoBehaviour
         {
             spawnInterceptor(false);
         }
-        if (enemyBomberH == null)
+        if (enemyBomberH == null && allyArtillery.Count == 0)
         {
             spawnHeavyBomber(true);
         }
-        if (allyBomberH == null) 
+        if (allyBomberH == null && enemyArtillery.Count == 0) 
         {
             spawnHeavyBomber(false);
         }
