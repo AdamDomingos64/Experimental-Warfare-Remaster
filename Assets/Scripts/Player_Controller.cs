@@ -11,11 +11,15 @@ public class Player_Controller : MonoBehaviour
     private Vector2  moveInput;
     private SpriteRenderer spriteRenderer;
     public GameObject Ammunition;
+    public int maxHealth;
+    public int Health;
+
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Health = maxHealth;
     }
 
     // Update is called once per frame
@@ -25,40 +29,34 @@ public class Player_Controller : MonoBehaviour
         transform.position += transform.up * Time.deltaTime * Speed;
 
         moveInput.x = Input.GetAxisRaw("Horizontal");
-        /*        moveInput.y = Input.GetAxisRaw("Vertical");
-
-
-
-                moveInput.Normalize();*/
-        
-
-        //Rb2d.velocity = moveInput * Speed;
 
         if (moveInput.x > 0) 
         {
-            //transform.rotation = Quaternion.Euler(0, 0, -90 * Time.deltaTime);
+        
             transform.Rotate(0, 0, -10 * Time.deltaTime * lookSpeed);
         }
 
          else if (moveInput.x < 0)
         {
-            //transform.rotation = Quaternion.Euler(0, 0, 90);
+            
             transform.Rotate(0, 0, 10 * Time.deltaTime * lookSpeed);
         }
 
-        /*     else if (moveInput.y > 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+        
 
-                 else if (moveInput.y < 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 180);
-        }
-*/
         if (Input.GetKeyDown("space"))
         {
             Instantiate(Ammunition, transform.position, transform.rotation);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "")
+        {
+            Health -= 1;
+            Destroy(collision.gameObject);
+           
         }
     }
 }
