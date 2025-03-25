@@ -76,11 +76,11 @@ public class Enemy_Manager : MonoBehaviour
         {
             spawnInterceptor(false);
         }
-        if (enemyBomberH == null && allyArtillery.Count == 0)
+        if (enemyBomberH == null && allyArtillery.Count <= 0)
         {
             spawnHeavyBomber(true);
         }
-        if (allyBomberH == null && enemyArtillery.Count == 0) 
+        if (allyBomberH == null && enemyArtillery.Count <= 0) 
         {
             spawnHeavyBomber(false);
         }
@@ -230,6 +230,7 @@ public class Enemy_Manager : MonoBehaviour
 
     private void spawnHeavyBomber(bool isEnemy)
     {
+
         if (isEnemy == true)
         {
             var newBomberHobj = GameObject.Instantiate(enemyHeavyBomberPrefab, enemySpawnT.position, Quaternion.identity, null);
