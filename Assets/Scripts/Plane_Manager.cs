@@ -49,8 +49,7 @@ public class Enemy_Manager : MonoBehaviour
         spawnFighter();
         spawnInterceptor(true);
         spawnInterceptor(false);
-        spawnHeavyBomber(true);
-        spawnHeavyBomber(false);
+       
     }
 
     // Update is called once per frame
@@ -78,11 +77,31 @@ public class Enemy_Manager : MonoBehaviour
         }
         if (enemyBomberH == null && allyArtillery.Count <= 0)
         {
-            spawnHeavyBomber(true);
+            var newBomberHobj = GameObject.Instantiate(enemyHeavyBomberPrefab, enemySpawnT.position, Quaternion.identity, null);
+            enemyBomberH = newBomberHobj.GetComponent<Basic_Heavy_Bomber_Controller>();
+
+            if (allyBase.transform != null)
+            {
+                enemyBomberH.Target = allyBase.transform;
+            }
+            else
+            {
+                enemyBomberH.Target = null;
+            }
         }
         if (allyBomberH == null && enemyArtillery.Count <= 0) 
         {
-            spawnHeavyBomber(false);
+            var newBomberHobj = GameObject.Instantiate(allyHeavyBomberPrefab, allySpawnT.position, Quaternion.identity, null);
+            allyBomberH = newBomberHobj.GetComponent<Basic_Heavy_Bomber_Controller>();
+
+            if (enemyBase.transform != null)
+            {
+                allyBomberH.Target = enemyBase.transform;
+            }
+            else
+            {
+                allyBomberH.Target = null;
+            }
         }
 
 
@@ -158,22 +177,8 @@ public class Enemy_Manager : MonoBehaviour
 
 
 
-        if (allyBase.transform != null)
-        {
-            enemyBomberH.Target = allyBase.transform;
-        }
-        else
-        {
-            enemyBomberH.Target = null;
-        }
-        if (enemyBase.transform != null)
-        {
-            allyBomberH.Target = enemyBase.transform;
-        }
-        else
-        {
-            allyBomberH.Target = null;
-        }
+       
+    
 
 
 
@@ -228,20 +233,6 @@ public class Enemy_Manager : MonoBehaviour
 
     }
 
-    private void spawnHeavyBomber(bool isEnemy)
-    {
-
-        if (isEnemy == true)
-        {
-            var newBomberHobj = GameObject.Instantiate(enemyHeavyBomberPrefab, enemySpawnT.position, Quaternion.identity, null);
-            enemyBomberH = newBomberHobj.GetComponent<Basic_Heavy_Bomber_Controller>();
-        }
-
-        else
-        {
-            var newBomberHobj = GameObject.Instantiate(allyHeavyBomberPrefab, allySpawnT.position, Quaternion.identity, null);
-            allyBomberH = newBomberHobj.GetComponent<Basic_Heavy_Bomber_Controller>();
-        }
-    }
+   
 
 }
