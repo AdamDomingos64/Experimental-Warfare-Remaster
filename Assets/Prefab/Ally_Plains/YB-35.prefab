@@ -147,7 +147,7 @@ MonoBehaviour:
   speedOr: 2
   Target: {fileID: 0}
   Ammunition: {fileID: 1947064651710453616, guid: b67f1be9aad05ba4192b54ac01903ba0, type: 3}
-  maxHealth: 3
+  maxHealth: 8
   attackRange: 2
   cooldown: 3
   Health: 0

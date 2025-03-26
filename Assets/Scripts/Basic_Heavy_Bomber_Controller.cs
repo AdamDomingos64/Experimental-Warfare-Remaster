@@ -101,13 +101,30 @@ public class Basic_Heavy_Bomber_Controller : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
-        Debug.Log("hit");
+    {
         if (collision.gameObject.tag == "Bullet")
-        {  
-            Health -= 1;
-            Destroy(collision.gameObject);
+        {
 
+            // healthbar.UpdateHealthBar(Health, maxHealth);
+            if (gameObject.name == "YB-35(Clone)")
+            {
+
+
+                {
+                    Health -= 1;
+                    Destroy(collision.gameObject);
+                }
+
+            }
+
+        }
+        if (collision.gameObject.tag == "BulletP")
+        {
+            if (gameObject.name == "Project_C(Clone)")
+            {
+                Health -= 1;
+                Destroy(collision.gameObject);
+            }
         }
     }
 
