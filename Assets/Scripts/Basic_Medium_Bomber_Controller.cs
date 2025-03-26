@@ -129,18 +129,45 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
                 this.gameObject.GetComponent<Player_Controller>().enabled = true;
                 this.gameObject.GetComponent<Basic_Medium_Bomber_Controller>().enabled = false;
             }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Medium_Bomber_Controller>().enabled = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Medium_Bomber_Controller>().enabled = true;
+            }
         }
         
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
-        Debug.Log("hit");
+    {
         if (collision.gameObject.tag == "Bullet")
-        {  
-            Health -= 1;
-            Destroy(collision.gameObject);
-            
+        {
+
+            // healthbar.UpdateHealthBar(Health, maxHealth);
+            if (gameObject.name == "Mix_Master(Clone)")
+            {
+
+
+                {
+                    Health -= 1;
+                    Destroy(collision.gameObject);
+                }
+
+            }
+
+        }
+        if (collision.gameObject.tag == "BulletP")
+        {
+            if (gameObject.name == "BV-141(Clone)")
+            {
+                Health -= 1;
+                Destroy(collision.gameObject);
+            }
         }
     }
 

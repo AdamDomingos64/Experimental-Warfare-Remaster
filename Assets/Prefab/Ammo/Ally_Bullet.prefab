@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1928468390328792228}
   m_Layer: 0
   m_Name: Ally_Bullet
-  m_TagString: Bullet
+  m_TagString: BulletP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e856303d354fafe46b3b9fb1ce7fd93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4

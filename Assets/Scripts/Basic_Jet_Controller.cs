@@ -19,6 +19,8 @@ public class Basic_Jet_Controller : MonoBehaviour
     public int Health;
     public Vector2 targetPosition;
     public GameObject Weakness;
+    public bool isAlly;
+    public Camera_Controller Spotlight;
 
 
     // Start is called before the first frame update
@@ -27,6 +29,10 @@ public class Basic_Jet_Controller : MonoBehaviour
         cooling = cooldown;
         speed = speedOr;
         Health = maxHealth;
+        if (isAlly == true)
+        {
+            Spotlight.Aircraft.Add(this.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -79,6 +85,11 @@ public class Basic_Jet_Controller : MonoBehaviour
 
         if (Health <= 0)
         {
+            if (isAlly)
+            {
+                Spotlight.Aircraft.Remove(this.gameObject);
+
+            }
             Destroy(this.gameObject);
         }
 
@@ -97,17 +108,60 @@ public class Basic_Jet_Controller : MonoBehaviour
         {
             cooling = 1;
         }
+
+        if (isAlly == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Jet_Controller>().enabled = true;
+
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Jet_Controller>().enabled = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Jet_Controller>().enabled = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = true;
+                this.gameObject.GetComponent<Basic_Jet_Controller>().enabled = false;
+            }
+        }
         
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
-        Debug.Log("hit");
-        if (collision.gameObject.tag == "BulletP")
-        {  
-            Health -= 1;
-            Destroy(collision.gameObject);
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
 
+            // healthbar.UpdateHealthBar(Health, maxHealth);
+            if (gameObject.name == "Goblin(Clone)")
+            {
+
+
+                {
+                    Health -= 1;
+                    Destroy(collision.gameObject);
+                }
+
+            }
+
+        }
+        if (collision.gameObject.tag == "BulletP")
+        {
+            if (gameObject.name == "Lippisch(Clone)")
+            {
+                Health -= 1;
+                Destroy(collision.gameObject);
+            }
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5884545833227415183}
   - component: {fileID: -1722688329705067099}
   - component: {fileID: 9220838918107998849}
+  - component: {fileID: 5728375484633652770}
   m_Layer: 0
   m_Name: XFV-1
   m_TagString: Untagged
@@ -153,6 +154,8 @@ MonoBehaviour:
   Health: 0
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
+  isAlly: 1
+  Spotlight: {fileID: 0}
 --- !u!95 &9220838918107998849
 Animator:
   serializedVersion: 5
@@ -174,3 +177,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5728375484633652770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280113797426451271}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5e51fd98a0f004ba2d3970098ec257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 3
+  lookSpeed: 15
+  Rb2d: {fileID: 0}
+  Ammunition: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}
+  maxHealth: 3
+  Health: 0
+  isAlly: 1
+  isBomber: 0
+  isFighter: 0
+  isInterceptor: 1
+  isJet: 0
+  Spotlight: {fileID: 0}

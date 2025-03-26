@@ -123,7 +123,7 @@ public class Basic_Fighter_Controller : MonoBehaviour
 
         if (isAlly == true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if(Input.GetKeyDown(KeyCode.Alpha1))
             {
 
                 this.gameObject.GetComponent<Player_Controller>().enabled = true;
@@ -131,6 +131,16 @@ public class Basic_Fighter_Controller : MonoBehaviour
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Fighter_Controller>().enabled = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Fighter_Controller>().enabled = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 this.gameObject.GetComponent<Player_Controller>().enabled = false;
                 this.gameObject.GetComponent<Basic_Fighter_Controller>().enabled = true;

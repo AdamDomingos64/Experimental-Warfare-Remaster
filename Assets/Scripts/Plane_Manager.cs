@@ -97,8 +97,10 @@ public class Enemy_Manager : MonoBehaviour
 
         if (enemyBomberH != null && allyJet == null)
         {
-            var newJetobj = GameObject.Instantiate(allyJetPrefab, enemySpawnT.position, Quaternion.identity, null);
+            var newJetobj = GameObject.Instantiate(allyJetPrefab, allySpawnT.position, Quaternion.identity, null);
             allyJet = newJetobj.GetComponent<Basic_Jet_Controller>();
+            allyJet.Spotlight = spotLightRef;
+            newJetobj.GetComponent<Player_Controller>().Spotlight = spotLightRef;
 
             if (enemyBomberH.transform != null)
             {
@@ -151,7 +153,7 @@ public class Enemy_Manager : MonoBehaviour
             
         }
         if(allyInterceptor.transform != null)
-            {
+        {
             enemyFighter.Target = allyInterceptor.transform;
         }
             else
@@ -278,8 +280,10 @@ public class Enemy_Manager : MonoBehaviour
         {
             var newInterceptorobj = GameObject.Instantiate(allyInterceptorPrefab, allySpawnT.position, Quaternion.identity, null);
             allyInterceptor = newInterceptorobj.GetComponent<Basic_Interceptor_Controller>();
+            allyInterceptor.Spotlight = spotLightRef;
+            newInterceptorobj.GetComponent<Player_Controller>().Spotlight = spotLightRef;
 
-            
+
 
         }
     }
