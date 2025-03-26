@@ -23,6 +23,7 @@ public class Enemy_Manager : MonoBehaviour
     public Basic_Jet_Controller allyJet;
 
     public Basic_Fighter_Controller enemyFighter;
+    public Basic_Fighter_Controller allyFighter;
 
 
     public GameObject allyMediumBomberPrefab;
@@ -35,6 +36,7 @@ public class Enemy_Manager : MonoBehaviour
     public GameObject enemyJetPrefab;
 
     public GameObject enemyFighterPrefab;
+    public GameObject allyFighterPrefab;
 
     public GameObject allyInterceptorPrefab;
     public GameObject enemyInterceptorPrefab;
@@ -46,13 +48,13 @@ public class Enemy_Manager : MonoBehaviour
     public Transform allySpawnT;
     public Transform PlayerT;
 
+    public Camera_Controller spotLightRef;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnMediumBomber(true);
         spawnMediumBomber(false);
-        spawnFighter();
         spawnInterceptor(true);
         spawnInterceptor(false);
        
@@ -68,10 +70,6 @@ public class Enemy_Manager : MonoBehaviour
         if (allyBomberM == null)
         {
             spawnMediumBomber (false);
-        }
-        if(enemyFighter == null)
-        {
-            spawnFighter();
         }
         if (enemyInterceptor == null)
         {
@@ -140,6 +138,49 @@ public class Enemy_Manager : MonoBehaviour
                 allyBomberH.Target = null;
             }
         }
+
+
+
+
+
+        if (enemyFighter == null && allyInterceptor != null)
+        {
+            var newFighterobj = GameObject.Instantiate(enemyFighterPrefab, enemySpawnT.position, Quaternion.identity, null);
+            enemyFighter = newFighterobj.GetComponent<Basic_Fighter_Controller>();
+
+            
+        }
+        if(allyInterceptor.transform != null)
+            {
+            enemyFighter.Target = allyInterceptor.transform;
+        }
+            else
+        {
+            enemyFighter.Target = null;
+        }
+        if (allyFighter == null && enemyInterceptor != null)
+        {
+            var newFighterobj = GameObject.Instantiate(allyFighterPrefab, allySpawnT.position, Quaternion.identity, null);
+            allyFighter = newFighterobj.GetComponent<Basic_Fighter_Controller>();
+            allyFighter.Spotlight = spotLightRef;
+            newFighterobj.GetComponent<Player_Controller>().Spotlight = spotLightRef;
+
+
+        }
+        if (enemyInterceptor.transform != null)
+        {
+            allyFighter.Target = enemyInterceptor.transform;
+        }
+        else
+        {
+            allyFighter.Target = null;
+        }
+
+
+
+
+
+
 
 
 
@@ -222,12 +263,7 @@ public class Enemy_Manager : MonoBehaviour
     }
 
 
-    private void spawnFighter()
-    {
-        var newFighterobj = GameObject.Instantiate(enemyFighterPrefab, enemySpawnT.position, Quaternion.identity, null);
-        enemyFighter = newFighterobj.GetComponent<Basic_Fighter_Controller>();
-        enemyFighter.Target = PlayerT;
-    }
+    
 
     private void spawnInterceptor(bool isEnemy)
     {
@@ -264,8 +300,10 @@ public class Enemy_Manager : MonoBehaviour
         {
             var newBomberMobj = GameObject.Instantiate(allyMediumBomberPrefab, allySpawnT.position, Quaternion.identity, null);
             allyBomberM = newBomberMobj.GetComponent<Basic_Medium_Bomber_Controller>();
-      
-            
+            allyBomberM.Spotlight = spotLightRef;
+            newBomberMobj.GetComponent<Player_Controller>().Spotlight = spotLightRef;
+
+
         }
 
     }

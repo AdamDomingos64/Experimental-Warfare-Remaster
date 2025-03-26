@@ -19,7 +19,10 @@ public class Basic_Fighter_Controller : MonoBehaviour
     public int Health;
     public Vector2 targetPosition;
     public GameObject Weakness;
-  // [SerializeField] HealthBar healthbar;
+    // [SerializeField] HealthBar healthbar;
+    public bool isAlly;
+    public Camera_Controller Spotlight;
+
 
 
 
@@ -33,7 +36,11 @@ public class Basic_Fighter_Controller : MonoBehaviour
         cooling = cooldown;
         speed = speedOr;
         Health = maxHealth;
-       // healthbar.UpdateHealthBar(Health, maxHealth);
+        // healthbar.UpdateHealthBar(Health, maxHealth);
+        if (isAlly == true)
+        {
+            Spotlight.Aircraft.Add(this.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -65,40 +72,101 @@ public class Basic_Fighter_Controller : MonoBehaviour
             transform.rotation = Quaternion.Euler(newRotation);
         }
 
-        if (Vector2.Distance(transform.position, Target.transform.position) <= attackRange)
+        if (Target != null)
         {
-           // Debug.Log("stop");
-             speed = 0;
+            if (Vector2.Distance(transform.position, Target.transform.position) <= attackRange)
+            {
+                // Debug.Log("stop");
+                speed = 0;
+            }
+            else if (Vector2.Distance(transform.position, Target.transform.position) > attackRange)
+            {
+                // Debug.Log("find");
+                speed = speedOr;
+            }
+            Debug.Log("target is not null");
         }
-        else if(Vector2.Distance(transform.position, Target.transform.position) > attackRange)
+        else if (Target = null)
         {
-           // Debug.Log("find");
-            speed = speedOr;
+            speed = 0;
+            Debug.Log("target is null");
         }
 
         if (Health <= 0)
         {
+            if (isAlly)
+            {
+                Spotlight.Aircraft.Remove(this.gameObject);
+                
+            }
             Destroy(this.gameObject);
         }
 
-        if ( cooling <= 0 && Vector2.Distance(Target.transform.position, transform.position) <= attackRange )
+        if (Target != null)
         {
-            Instantiate(Ammunition,transform.position, transform.rotation);
+            if (cooling <= 0 && Vector2.Distance(Target.transform.position, transform.position) <= attackRange)
+            {
+                Instantiate(Ammunition, transform.position, transform.rotation);
+            }
+            if (cooling <= 0)
+            {
+                cooling = cooldown;
+            }
         }
-         if (cooling <= 0)
+        else if (Target == null)
         {
-            cooling = cooldown;
+            cooling = 1;
         }
-        
+
+
+
+
+        if (isAlly == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+
+                this.gameObject.GetComponent<Player_Controller>().enabled = true;
+                this.gameObject.GetComponent<Basic_Fighter_Controller>().enabled = false;
+
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Fighter_Controller>().enabled = true;
+            }
+        }
+
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+
+            // healthbar.UpdateHealthBar(Health, maxHealth);
+            if (gameObject.name == "Xp-55(Clone)")
+            {
+
+
+                {
+                    Health -= 1;
+                    Destroy(collision.gameObject);
+                }
+
+            }
+
+        }
         if (collision.gameObject.tag == "BulletP")
-        {  
-            Health -= 1;
-            Destroy(collision.gameObject);
-           // healthbar.UpdateHealthBar(Health, maxHealth);
+        {
+            if (gameObject.name == "jager_New(Clone)")
+            {
+                Health -= 1;
+                Destroy(collision.gameObject);
+            }
         }
     }
 

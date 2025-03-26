@@ -19,7 +19,9 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
     public int Health;
     public Vector2 targetPosition;
     public GameObject Weakness;
-    [SerializeField] HealthBar healthbar;
+   // [SerializeField] HealthBar healthbar;
+    public bool isAlly;
+    public Camera_Controller Spotlight;
 
 
 
@@ -33,7 +35,11 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
         cooling = cooldown;
         speed = speedOr;
         Health = maxHealth;
-        
+        if (isAlly == true)
+        {
+            Spotlight.Aircraft.Add(this.gameObject);
+        }
+
     }
 
     // Update is called once per frame
@@ -86,7 +92,13 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
 
         if (Health <= 0)
         {
+            if (isAlly)
+            {
+                Spotlight.Aircraft.Remove(this.gameObject);
+                
+            }
             Destroy(this.gameObject);
+
         }
 
         if (Target != null)
@@ -103,6 +115,20 @@ public class Basic_Medium_Bomber_Controller : MonoBehaviour
         else if (Target == null)
         {
             cooling = 1;
+        }
+
+        if (isAlly == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = false;
+                this.gameObject.GetComponent<Basic_Medium_Bomber_Controller>().enabled = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                this.gameObject.GetComponent<Player_Controller>().enabled = true;
+                this.gameObject.GetComponent<Basic_Medium_Bomber_Controller>().enabled = false;
+            }
         }
         
     }

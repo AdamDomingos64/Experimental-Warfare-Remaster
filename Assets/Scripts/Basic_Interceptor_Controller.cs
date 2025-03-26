@@ -101,13 +101,30 @@ public class Basic_Interceptor_Controller : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
-        Debug.Log("hit");
-        if (collision.gameObject.tag == "BulletP")
-        {  
-            Health -= 1;
-            Destroy(collision.gameObject);
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
 
+            // healthbar.UpdateHealthBar(Health, maxHealth);
+            if (gameObject.name == "XFV-1(Clone)")
+            {
+
+            
+                {
+                    Health -= 1;
+                    Destroy(collision.gameObject);
+                }
+
+            }
+            
+        }
+        if(collision.gameObject.tag == "BulletP")
+        {
+             if (gameObject.name == "Triebflugel(Clone)")
+            {
+                Health -= 1;
+                Destroy(collision.gameObject);
+            }
         }
     }
 
