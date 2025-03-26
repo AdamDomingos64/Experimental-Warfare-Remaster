@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: -997169265, guid: 7b88c13c4a11c134cbc65da6a2ef2e29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -182,6 +182,10 @@ MonoBehaviour:
   isAlly: 1
   isBomber: 0
   isFighter: 1
+  isInterceptor: 0
+  isJet: 0
+  Spotlight: {fileID: 0}
+  cooldown: 1
 --- !u!114 &8205014216357742242
 MonoBehaviour:
   m_ObjectHideFlags: 0

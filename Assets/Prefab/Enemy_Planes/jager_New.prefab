@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 5501411491358099391, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6402562585661090362, guid: 33c97f09da8b7d3419f0b8581d286c2c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -499,6 +503,8 @@ MonoBehaviour:
   Health: 0
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 7345158628801080902, guid: f4aeb34ce26bd784cac7d3e0e8f4f40e, type: 3}
+  isAlly: 0
+  Spotlight: {fileID: 0}
 --- !u!50 &8187653143633234060
 Rigidbody2D:
   serializedVersion: 4

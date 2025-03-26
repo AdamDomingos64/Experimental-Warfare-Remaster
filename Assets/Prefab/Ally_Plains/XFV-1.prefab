@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 626857413, guid: 8e1411700d3c92441922793ace44202c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda4d85ba5b8fd744956a8cbe1f79ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedOr: 3
+  speedOr: 2.5
   Target: {fileID: 0}
   Ammunition: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}
   maxHealth: 3
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5e51fd98a0f004ba2d3970098ec257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 2.5
   lookSpeed: 15
   Rb2d: {fileID: 0}
   Ammunition: {fileID: 1425180284696309026, guid: 8467fb5d3a4869948801a98971e5939e, type: 3}
@@ -201,3 +201,4 @@ MonoBehaviour:
   isInterceptor: 1
   isJet: 0
   Spotlight: {fileID: 0}
+  cooldown: 0.7

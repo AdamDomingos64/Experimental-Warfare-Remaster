@@ -20,19 +20,23 @@ public class Player_Controller : MonoBehaviour
     public bool isInterceptor;
     public bool isJet;
     public Camera_Controller Spotlight;
-
+    public float cooldown;
+    private float cooling;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         Health = maxHealth;
-        
+        cooling = cooldown;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        cooling -= Time.deltaTime;
 
         transform.position += transform.up * Time.deltaTime * Speed;
 
@@ -52,9 +56,10 @@ public class Player_Controller : MonoBehaviour
 
         
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && cooling <= 0)
         {
             Instantiate(Ammunition, transform.position, transform.rotation);
+            cooling = cooldown;
         }
 
 

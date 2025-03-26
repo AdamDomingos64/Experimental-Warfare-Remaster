@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: -58853742, guid: bed028a22f8744847b79c2054112c42c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   Ammunition: {fileID: 2695804329911005741, guid: 693b8a9ed02fda945947e003aa50e059, type: 3}
   maxHealth: 3
   attackRange: 2
-  cooldown: 1
+  cooldown: 2
   Health: 0
   targetPosition: {x: 0, y: 0}
   Weakness: {fileID: 3609906884996060922, guid: 315ca934198440d4e8112f7542eadf93, type: 3}
@@ -193,8 +193,12 @@ MonoBehaviour:
   lookSpeed: 15
   Rb2d: {fileID: 0}
   Ammunition: {fileID: 2695804329911005741, guid: 693b8a9ed02fda945947e003aa50e059, type: 3}
-  maxHealth: 5
+  maxHealth: 4
   Health: 0
   isAlly: 1
   isBomber: 1
   isFighter: 0
+  isInterceptor: 0
+  isJet: 0
+  Spotlight: {fileID: 0}
+  cooldown: 2
